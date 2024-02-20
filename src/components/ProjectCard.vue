@@ -1,0 +1,48 @@
+<template lang="">
+    <div class="card mb-5" style="width: 18rem;">
+        <img :src="imageUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ title }}</h5>
+            <p class="card-text">{{ description }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <strong>Author:</strong> {{ author }}
+            </li>
+            <li class="list-group-item">
+                <strong>Creation date:</strong> {{ creationDate }}
+            </li>
+            <li class="list-group-item">
+                <strong>Type:</strong> {{ type }}
+            </li>
+            <li class="list-group-item">
+                <strong>Technologies: </strong>
+                <span v-for="(tech, index) in technologies" :key="tech.id">
+                    {{ tech.name }} <span v-if="index !== technologies.length - 1">, </span>
+                </span>
+            </li>
+        </ul>
+
+    </div>
+    <div>
+        
+    </div>
+</template>
+<script>
+export default {
+    name: 'ProjectCard',
+
+    props: {
+        title: String,
+        imageUrl: String,
+        description: String,
+        author: String,
+        creationDate: String,
+        type: String,
+        technologies: Array,
+    },
+}
+</script>
+<style lang="">
+    
+</style>

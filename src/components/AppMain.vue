@@ -2,15 +2,25 @@
     <main class="container">
         <div class="row">
             <div class="col-12">
-                <h1>
+                <h1 class="my-3">
                     Projects
                 </h1>
-        
-                <ul>
+                <!-- <ul>
                     <li v-for="project in projects">
                         {{ project.title }}
                     </li>
-                </ul>
+                </ul> -->
+                <section class="cards-wrapper d-flex flex-wrap justify justify-content-between">
+                    <ProjectCard v-for="project in projects"
+                    :title="project.title"
+                    :imageUrl="project.cover_image"
+                    :description="project.description"
+                    :author="project.author"
+                    :creationDate="project.creation_date"
+                    :type="project.type.name"
+                    :technologies="project.technologies"
+                    />
+                </section>
             </div>
         </div>
     </main>
@@ -18,8 +28,14 @@
 
 <script>
 import axios from 'axios';
+import ProjectCard from './ProjectCard.vue';
 export default {
     name: 'AppMain',
+
+    components: {
+        ProjectCard,
+    },
+
     data(){
         return{
             projects: [],
@@ -47,5 +63,5 @@ export default {
     }
 }
 </script>
-<style lang="">
+<style lang="scss" scoped>
 </style>
