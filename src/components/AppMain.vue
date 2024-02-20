@@ -19,6 +19,7 @@
                     :creationDate="project.creation_date"
                     :type="project.type.name"
                     :technologies="project.technologies"
+                    :socials="project.socials"
                     />
                 </section>
             </div>
