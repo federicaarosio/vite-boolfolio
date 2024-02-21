@@ -1,6 +1,6 @@
 <template lang="">
     <main class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12">
                 <h1 class="my-3">
                     Projects
@@ -16,6 +16,8 @@
                     :type="project.type.name"
                     :technologies="project.technologies"
                     :socials="project.socials"
+                    :linkRoute="{ name: 'single-project', params: { id: project.id}}"
+                    linkLabel="Read more..."
                     />
                 </section>
             </div>

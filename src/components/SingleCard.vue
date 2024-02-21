@@ -26,8 +26,15 @@
                 <span v-for="(social, index) in socials" :key="social.id">
                     {{ social.name }}<span v-if="index !== socials.length - 1">, </span>
                 </span>
+                <div class="my-4" v-if="linkRoute">
+                    <router-link :to="linkRoute" class="btn btn-primary">
+                        {{ linkLabel }}
+                    </router-link>
+                </div>
             </li>
         </ul>
+
+
 
     </div>
     <div>
@@ -47,6 +54,8 @@ export default {
         type: String,
         technologies: Array,
         socials: Array,
+        linkRoute: Object, String,
+        linkLabel: String,
     },
 }
 </script>

@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from './pages/HomePage.vue';
 import ProjectsList from './pages/ProjectsList.vue';
+import SingleProject from './pages/SingleProject.vue';
 import TypesList from './pages/TypesList.vue';
+
 
 
 // Assegno a una variabile costante il valore che mi restituirà createRouter
@@ -20,6 +22,11 @@ import TypesList from './pages/TypesList.vue';
                 path: '/projects',
                 name: 'projects',
                 component: ProjectsList
+            },
+            {
+                path: '/projects/:id',
+                name: 'single-project',
+                component: SingleProject
             },
             {
                 path: '/types',
