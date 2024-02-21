@@ -18,13 +18,13 @@
             <li class="list-group-item">
                 <strong>Technologies: </strong>
                 <span v-for="(tech, index) in technologies" :key="tech.id">
-                    {{ tech.name }} <span v-if="index !== technologies.length - 1">, </span>
+                    {{ tech.name }}<span v-if="index !== technologies.length - 1">, </span>
                 </span>
             </li>
             <li class="list-group-item">
                 <strong>Socials: </strong>
                 <span v-for="(social, index) in socials" :key="social.id">
-                    {{ social.name }} <span v-if="index !== socials.length - 1">, </span>
+                    {{ social.name }}<span v-if="index !== socials.length - 1">, </span>
                 </span>
             </li>
         </ul>
