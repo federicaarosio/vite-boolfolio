@@ -8,15 +8,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <li class="nav-item" v-for="(link, index) in linkItems" :key="index">
+                            <router-link :to="{ name: link.routerName }" class="nav-link">
+                                {{ link.label }}
+                            </router-link>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <router-link :to="{ name: 'projects'}" class="nav-link active">
+                                Projects
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Types</a>
-                        </li>
+                            <router-link :to="{ name: 'types'}" class="nav-link active">
+                                Types
+                            </router-link>
+                        </li> -->
 
                     </ul>
                 </div>
@@ -27,6 +33,25 @@
 <script>
 export default {
     name: 'AppHeader',
+    data() {
+        return {
+            linkItems: [
+                {
+                    label: 'Home',
+                    routerName: 'home'
+                },
+                {
+                    label: 'Projects',
+                    routerName: 'projects'
+                },
+                {
+                    label: 'Types',
+                    routerName: 'types'
+                },
+
+            ]
+        }
+    },
 }
 </script>
 <style lang="">

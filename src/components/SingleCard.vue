@@ -36,7 +36,7 @@
 </template>
 <script>
 export default {
-    name: 'ProjectCard',
+    name: 'SingleCard',
 
     props: {
         title: String,
