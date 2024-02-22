@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './pages/HomePage.vue';
 import ProjectsList from './pages/ProjectsList.vue';
 import SingleProject from './pages/SingleProject.vue';
+import ProjectSearch from './pages/ProjectSearch.vue';
 import TypesList from './pages/TypesList.vue';
 
 
@@ -22,6 +23,11 @@ import TypesList from './pages/TypesList.vue';
                 path: '/projects',
                 name: 'projects',
                 component: ProjectsList
+            },
+            {
+                path: '/projects-search',
+                name: 'projects-search',
+                component: ProjectSearch
             },
             {
                 path: '/projects/:id',
